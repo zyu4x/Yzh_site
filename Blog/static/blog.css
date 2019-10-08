@@ -1,0 +1,74 @@
+/* 去掉内容显示前面的点 */
+ul.blog-types {
+    list-style-type:none;
+}
+
+/* :not(:list-child)表示div.blog的下边框为设置的border-bottom: 1px solid #eee; */
+div.blog:not(:list-child){
+    margin-bottom: 2em;  /* 下边距 */
+    padding-bottom: 1em;  /* 内边距 */
+    border-bottom: 1px solid #eee;  /* 下边框和颜色 */
+}
+/* 更改上边距em是相对字体的大小（相对屏幕） */
+div.blog h3 {
+    margin-top: 0.5em;
+}
+
+ul.blog-info-description {
+    list-style-type:none; /* 去掉内容显示前面的点 */
+    margin-bottom: 1em;  /* 下边距 */
+}
+
+/* 合并一行显示 */
+ul.blog-info-description li {
+    display: inline-block;
+    margin-right:1em;  /* 行里的边距 */
+
+}
+
+/* 首行缩进俩个字符 */
+div.blog-content {
+    text-indent:2em;
+    margin-bottom: 2em;
+
+}
+/* 设置分页页码居中显示
+div.paginator {
+    text-align: center;
+}*/
+
+/*设置边距*/
+div.blog-more {
+    margin-top: 1em;
+}
+
+div.comment-area {
+    margin-top: 2em;       /*设置上边距*/
+
+}
+
+h3.comment-area-title {
+    border-bottom: 1px solid #ccc;  /*设置下划线*/
+    padding-bottom: 0.4em;
+}
+
+div.comment {
+    border-bottom:1px dashed #ccc;
+    margin-bottom:0.5em;
+    padding-bottom:0.5em;
+
+}
+
+div.reply {
+    margin-left: 2em;
+}
+
+div.like {
+    color: #23527c;
+    cursor: pointer;
+    display: inline-block;
+}
+
+div.like .active {
+    color: #f22;
+}

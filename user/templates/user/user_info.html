@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}个人资料{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+{% block content %}
+    <div class="containter">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                {% if user.is_authenticated %}
+                    <h2>{{ user.username }}</h2>
+                        <ul>
+                            <li>昵称:{{ user.profile.nickname }} <a href="{% url 'change_nickname' %}?from={{ request.get_full_path }}">修改昵称</a></li>
+                            <li>邮箱：
+                                {% if user.email %}
+                                    {{ user.email }}
+                                {% else %}
+                                    <a href="{% url 'bind_email' %}?from={{ request.get_full_path }}">未绑定邮箱(点击绑定)</a>
+                                {% endif %}
+                            </li>
+                            <li>上次登录时间：{{ user.last_login }}</li>
+                            <li><a href="">修改密码</a></li>
+                        </ul>
+                {% else %}
+                    <script type="text/javascript">
+                        window.location.href = '/';
+                    </script>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
